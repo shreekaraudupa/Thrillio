@@ -1,13 +1,21 @@
 package com.semanticsquare.thrilio.managers;
 
+import com.semanticsquare.thrilio.DataStore;
+import com.semanticsquare.thrilio.dao.BookmarkDao;
 import com.semanticsquare.thrilio.entities.Book;
+import com.semanticsquare.thrilio.entities.Bookmark;
 import com.semanticsquare.thrilio.entities.Movie;
 import com.semanticsquare.thrilio.entities.WebLink;
 
 public class BookmarkManager {
     private static BookmarkManager bookmarkManagerInstance = new BookmarkManager();
-
+    private static BookmarkDao bookmarkDao=new BookmarkDao();
+    //Private constructor as others cant instantiate this class as we want to maintain Singleton
     private BookmarkManager() {
+    }
+
+    public Bookmark[][] getBookmark(){
+        return bookmarkDao.getbookmarks();
     }
 
     public static BookmarkManager getInstance() {
