@@ -37,7 +37,16 @@ public class Launch {
         }
     }
 
+    private static void startBookmarking() {
+        System.out.println("/n/n/n/n/n/2. Bookmarking ");
+        for(User user : users){
+            VIew.bookmark(user,bookmarks);
+        }
+    }
     public static void main(String[] args) {
         loadData();
+        startBookmarking();
     }
+
+
 }
